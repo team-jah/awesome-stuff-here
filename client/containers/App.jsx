@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import fetch from 'cross-fetch';
+import Survey from '../components/Survey';
 import Footer from '../components/Footer.jsx';
 import { Navbar, NavItem, Button } from 'react-materialize';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Landing from '../components/Landing.jsx';
-
 
 class App extends Component {
   render() {
