@@ -106,6 +106,13 @@ class Survey extends Component {
     this.setState({ sliderValues });
   }
 
+  handleSubmit() {
+    fetch('/survey', {
+      method: 'POST',
+      body: JSON.stringify(this.state)
+    });
+  }
+
   renderSliders() {
     return Object.keys(this.state.sliderValues).map((key, i) => {
       return (
@@ -147,7 +154,7 @@ class Survey extends Component {
           Please select how import each of the following values are to you when looking for a company. 
         </div>
         {this.renderSliders.call(this)}
-        <button className='survey__submit'>
+        <button onClick={this.handleSubmit.bind(this)} className='survey__submit'>
           Submit
         </button>
       </div>
