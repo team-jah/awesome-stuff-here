@@ -5,6 +5,7 @@ const port = 3000;
 const app = express();
 // const mongoose = require('mongoose');
 
+const companyAPI = require('./db/companyAPI');
 
 // mongoose.connect('mongodb://localhost/not-instagram');
 // mongoose.connection.once('open', () => {
@@ -15,6 +16,7 @@ app.use(express.static(`${__dirname}/../build`));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+app.get('/api/companies', companyAPI.apiQuery);
 
 app.listen(port);
 console.log(`Server started on PORT:${port}`);
