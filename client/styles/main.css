@@ -101,7 +101,7 @@ body {
 .survey__submit {
   width: 200px;
   height: 40px;
-  background-color: rgb(110, 192, 184);
+  background-color: #26a69a;
   border: none;
   border-radius: 5px;
   font-size: 1.4em;
@@ -111,7 +111,7 @@ body {
 }
 
 .survey__submit:hover {
-  background-color: rgb(130, 212, 204);
+  background-color: #2bbbad;
   cursor: pointer;
 }
 
@@ -130,11 +130,30 @@ body {
 .company__header {
   border-bottom: 1px solid rgb(230, 230, 230);
   padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .company__header h2 {
   margin: 0;
   padding: 0;
+}
+
+.company__button {
+  width: 150px;
+  height: 40px;
+  background-color:#26a69a;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  color: white;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1em;
+}
+
+.company__button:hover {
+  background-color:#2bbbad;
 }
 
 .company__values {
