@@ -31,8 +31,8 @@ class App extends Component {
         <div className="app">
           <Navbar right brand="awesome team">
             <NavItem href="/companies">Companies</NavItem>
-            <Button waves='light'>Employers</Button>
-            <Button waves='light'><Link to='/survey'>Candidates</Link></Button>
+            <NavItem>Employers</NavItem>
+            <NavItem><Link to='/survey'>Candidates</Link></NavItem>
           </Navbar>
 
           {this.state.matches && <Redirect to='/matches' />}
