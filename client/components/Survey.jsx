@@ -144,11 +144,11 @@ class Survey extends Component {
           Company Survey
         </h1>
         <div className='survey__description'>
-          Select how import each of the following values are to you when looking for a company. 
+          Select how important each of the following values are to you when looking for a company.
         </div>
         {this.renderSliders.call(this)}
         <div className='survey__description'>
-          Enter your information that can be provided to employers. 
+          Enter your information that can be provided to employers.
         </div>
         <div className='survey__field'>
           <div className='survey__label'>

@@ -3,6 +3,7 @@ import fetch from 'cross-fetch';
 import Survey from '../components/Survey';
 import Matches from '../components/Matches';
 import Scores from '../components/Scores';
+import Quiz from '../components/Quiz.jsx';
 import Footer from '../components/Footer';
 import { Navbar, NavItem, Button } from 'react-materialize';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
@@ -18,7 +19,8 @@ class App extends Component {
     this.state = {
       survey: null,
       companies: null,
-      matches: false
+      matches: false,
+      quizScore: 0
     }
   }
 
@@ -49,7 +51,7 @@ class App extends Component {
 
   render() {
     return (
-      <BrowserRouter>      
+      <BrowserRouter>
         <div className="app">
           <Navbar right brand="awesome team">
             {/* <NavItem href="/companies">Companies</NavItem> */}
@@ -71,6 +73,10 @@ class App extends Component {
               />
               <Route exact path="/matches" render={(routeProps) => (
                 <Matches {...routeProps} survey={this.state.survey} companies={this.state.companies} />
+              )}
+              />
+              <Route path="/quiz" render={(routeProps) => (
+                <Quiz {...routeProps} quizScore={this.state.quizScore} />
               )}
               />
             <Route exact path="/interview/" component={Recording} />
