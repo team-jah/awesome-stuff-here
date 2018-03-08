@@ -20,6 +20,11 @@ class Quiz extends Component {
     this.handleRadioClick = this.handleRadioClick.bind(this);
   }
 
+
+  getNextQuestion() {
+    this.setState(prevState => ({ currentQuestion: ++prevState.currentQuestion }));
+  }
+
   checkAnswer() {
     if (this.state.currentQuestion < this.state.tests.length) {
       const { answer } = this.state.tests[this.state.currentQuestion];
@@ -27,10 +32,6 @@ class Quiz extends Component {
         this.setState(prevState => ({ quizScore: ++prevState.quizScore }));
       }
     }
-  }
-
-  getNextQuestion() {
-    this.setState(prevState => ({ currentQuestion: ++prevState.currentQuestion }));
   }
 
   handleStartClick() {
@@ -47,7 +48,6 @@ class Quiz extends Component {
   }
 
   handleRadioClick(event) {
-    console.log(event.target.value);
     this.setState(Object.assign({}, this.state, {
       selectedOption: event.target.value
     }));
@@ -55,7 +55,7 @@ class Quiz extends Component {
 
   render() {
     const i = this.state.currentQuestion;
-    console.log('QUIZ', this.state.quizScore)
+    console.log(this.props.location);
     if (i === this.state.tests.length) {
       return (
         <div id="results-block">

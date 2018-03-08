@@ -24,7 +24,9 @@ class Matches extends Component {
         const num = charMap[companyValues[key2].grade[0]];
         if ((sliderValues[key2].value - num) >= 2) match = false;
       });
-      if (match) matches[key] = this.props.companies[key];
+      if (match && Object.keys(this.props.companies[key].culture).length > 0) {
+        matches[key] = this.props.companies[key];
+      }
     });
 
     this.setState({ matches });
@@ -51,22 +53,19 @@ class Matches extends Component {
       matchesForPage[matches[i]] = this.state.matches[matches[i]];
     }
 
-    return Object.keys(matchesForPage)
-      .filter(company => Object.keys(matchesForPage[company].culture).length > 0)
-      .map((company, i) => {
-        return (
-          <div className='company' key={i}>
-            <div className='company__header'>
-              <h2>{company}</h2>
-              {/* <Link className='company__button' to={`/quiz/${company}`}>Apply</Link> */}
-              <Link className='company__button' to="/quiz">Apply</Link>
-            </div>
-            <div className='company__values'>
-              {this.renderValues(matchesForPage[company].culture)}
-            </div>
+    return Object.keys(matchesForPage).map((company, i) => {
+      return (
+        <div className='company' key={i}>
+          <div className='company__header'>
+            <h2>{company}</h2>
+            <Link className='company__button' to={`/quiz/${company}?name=${this.props.survey.name}&email=${this.props.survey.email}`}>Apply</Link>
           </div>
-        );
-      });
+          <div className='company__values'>
+            {this.renderValues(matchesForPage[company].culture)}
+          </div>
+        </div>
+      );
+    });
   }
 
   handlePage(direction) {
