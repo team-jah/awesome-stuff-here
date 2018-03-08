@@ -107,8 +107,11 @@
 }
 
 #footer {
-  border-top: 1px solid black;
-  background-color: beige;
+  height: 200;
+  padding: 10px 0;
+  color: white;
+  /* border-top: 1px solid black; */
+  background-color: #434649;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -121,3 +124,33 @@
   text-align: center;
 }
 
+#landing {
+  margin: 0;
+  height: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav {
+  background-color: #283e4a;
+}
+
+.page-bg {
+  background-image: url("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-0.3.5&s=404e88a8cbfb7b2c4295fcbb13a44362&auto=format&fit=crop&w=2850&q=80");
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  filter: blur(5px);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
