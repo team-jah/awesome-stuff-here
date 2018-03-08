@@ -1,13 +1,19 @@
+<<<<<<< HEAD
 /* body {
   display: flex;
   justify-content: center;
   background-color: #CCC;
 } */
 
+=======
+>>>>>>> a35fe4f967da345d173a32806d847a654a0320cd
 .survey {
   width: 60vw;
   background-color: white;
   padding: 20px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .survey__title {
@@ -19,6 +25,7 @@
   justify-content: flex-start;
   align-items: center;
   margin-bottom: 20px;
+  width: 100%;
 }
 
 .survey__label {
@@ -92,17 +99,18 @@
 
 .survey__submit {
   width: 200px;
-  height: 60px;
-  background-color: rgb(55, 106, 211);
+  height: 40px;
+  background-color: rgb(110, 192, 184);
   border: none;
   border-radius: 5px;
   font-size: 1.4em;
   color: white;
   margin: 60px 0 40px 0;
+  outline: none;
 }
 
 .survey__submit:hover {
-  background-color: rgb(105, 156, 255);
+  background-color: rgb(130, 212, 204);
   cursor: pointer;
 }
 

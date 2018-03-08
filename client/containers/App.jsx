@@ -3,7 +3,7 @@ import fetch from 'cross-fetch';
 import Survey from '../components/Survey';
 import Footer from '../components/Footer.jsx';
 import { Navbar, NavItem, Button } from 'react-materialize';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import Landing from '../components/Landing.jsx';
 
 class App extends Component {
@@ -15,10 +15,12 @@ class App extends Component {
             <NavItem href="/companies">Companies</NavItem>
             <Button waves='light'>Employers</Button>
             <Button waves='light'>Candidates</Button>
+            <Link to='/survey'><Button waves='light'>Survey</Button></Link>
           </Navbar>
 
           <Switch>
             <Route exact path="/" component={Landing} />
+            <Route exact path="/survey" component={Survey} />
             {/* <Route exact path="/user/" component={} />
             <Route exact path="/matched/" component={} />
             <Route exact path="/companies/" component={} />
