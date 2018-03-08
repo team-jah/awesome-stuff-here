@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Timer from './Timer.jsx';
 import tests from '../../server/db/testTest';
+import { Link } from 'react-router-dom';
 
 class Quiz extends Component {
   constructor(props) {
@@ -10,7 +11,8 @@ class Quiz extends Component {
       currentQuestion: 0,
       secondsLeft: 30,
       selectedOption: '',
-      quizScore: 0
+      quizScore: 0,
+      finished: false
     };
     this.incrementer = null;
 
@@ -55,11 +57,33 @@ class Quiz extends Component {
 
   render() {
     const i = this.state.currentQuestion;
-    console.log(this.props.location);
+    const data = this.props.location.pathname.split('/');
     if (i === this.state.tests.length) {
+
+      if (!this.state.finished) {
+        this.setState({ finished: true });
+
+        const body = {
+          company: data[2],
+          applicant: {
+            name: data[3],
+            email: data[4],
+            score: (this.state.quizScore / this.state.tests.length) * 100
+          }
+        };
+
+        fetch('/api/quiz', {
+          method: 'POST',
+          body: JSON.stringify(body),
+          headers: { 'Content-Type': 'application/json' }
+        }).then(response => console.log(response));
+      }
+
       return (
         <div id="results-block">
           <h1>You received a score of {this.state.quizScore}/{this.state.tests.length}</h1>
+          <br /><br />
+          <Link className='company__button' to='/interview'>Continue</Link>
         </div>
       );
     }
