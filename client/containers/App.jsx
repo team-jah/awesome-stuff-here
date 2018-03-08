@@ -24,25 +24,6 @@ class App extends Component {
     }
   }
 
-  // Example for posting new quiz
-
-  // componentDidMount() {
-  //   const body = {
-  //     company: 'Facebook%20Inc',
-  //     applicant: {
-  //       name: 'Nancy',
-  //       email: 'nancy@hotmail.com',
-  //       score: 32
-  //     }
-  //   };
-
-  //   fetch('/api/quiz', {
-  //     method: 'POST',
-  //     body: JSON.stringify(body),
-  //     headers: { 'Content-Type': 'application/json' }
-  //   }).then(response => console.log(response));
-  // }
-
   addSurvey(survey) {
     fetch('/api/companies').then(response => response.json()).then(companies => {
       this.setState({ survey, companies, matches: true });
@@ -54,11 +35,8 @@ class App extends Component {
       <BrowserRouter>
         <div className="app">
           <Navbar right brand="awesome team">
-            {/* <NavItem href="/companies">Companies</NavItem> */}
-            {/* <NavItem>Employers</NavItem> */}
             <Link className='link' to='/survey'>Candidates</Link>
             <Link className='link' to='/scores'>Employers</Link>
-            <Link className='link' to='/interview'>Sign in</Link>
           </Navbar>
 
           {this.state.matches && <Redirect to='/matches' />}
