@@ -7,6 +7,8 @@ import { Navbar, NavItem, Button } from 'react-materialize';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import { Redirect } from 'react-router';
 import Landing from '../components/Landing.jsx';
+import Recording from '../components/Recording.jsx';
+import Sent from '../components/Sent.jsx';
 
 class App extends Component {
 
@@ -34,7 +36,7 @@ class App extends Component {
             {/* <NavItem>Employers</NavItem> */}
             <Link className='link' to='/matches'>Companies</Link>
             <Link className='link' to='/survey'>Employers</Link>
-            <Link className='link' to='/survey'>Sign in</Link>
+            <Link className='link' to='/interview'>Sign in</Link>
           </Navbar>
 
           {this.state.matches && <Redirect to='/matches' />}
@@ -52,8 +54,9 @@ class App extends Component {
               />
               {/* <Route exact path="/user/" component={} />
             <Route exact path="/matched/" component={} />
-            <Route exact path="/companies/" component={} />
-            <Route exact path="/interview/" component={} /> */}
+            <Route exact path="/companies/" component={} /> */}
+            <Route exact path="/interview/" component={Recording} />
+            <Route exact path="/sent/" component={Sent} />
             </Switch>
           </div>
 
