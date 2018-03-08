@@ -40,6 +40,7 @@ body {
   padding: 0 10px;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
   border: 1px solid #DDD;
+  margin: 0 !important;
 }
 
 .survey__input:active, .survey__input:focus {
@@ -163,6 +164,40 @@ body {
 
 .company__value {
   margin: 10px 20px;
+}
+
+/*  */
+/* score */
+/*  */
+
+.scores {
+  width: 50%;
+}
+
+.score {
+  border: 1px solid #CCC;
+  border-radius: 5px;
+  margin: 40px 0;
+  width: 100%;
+}
+
+.score__name {
+  padding: 10px 15px;
+}
+
+.score__applicants {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.score__applicant {
+  border-top: 1px solid #CCC;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 20px;
+  font-size: 1.2em;
 }
 
 /*  */

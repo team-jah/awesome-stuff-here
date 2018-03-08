@@ -111,7 +111,11 @@ class Survey extends Component {
   }
 
   handleSubmit() {
-    this.props.addSurvey(this.state);
+    if (this.state.name === '' || this.state.email === '') {
+      alert('Please provide a name and email.');
+    } else {
+      this.props.addSurvey(this.state);
+    }
   }
 
   renderSliders() {
@@ -148,7 +152,7 @@ class Survey extends Component {
         </div>
         <div className='survey__field'>
           <div className='survey__label'>
-            First Name:
+            Full Name:
           </div>
           <input onChange={this.handleName.bind(this)} value={this.state.name} type='text' className='survey__input'></input>
         </div>

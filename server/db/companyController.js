@@ -1,23 +1,23 @@
-const CompanyProfile = require('./companyModel');
+const Company = require('./companyModel');
 
 const companyController = {};
 
-companyController.addCompany = (req, res) => {
-  CompanyProfile.create({
-    name: req.body.name,
-    login: req.body.login,
-  }).then((result) => {
-    console.log('Post created');
-    res.status(200).json(result);
+companyController.addCompany = (req, res, next) => {
+  console.log('body', req.body);
+  Company.findOne({ name: req.body.company }).then(company => {
+    if (company) next();
+    else Company.create({ name: req.body.company }).then(() => next());
   });
 };
 
 companyController.addApplicant = (req, res) => {
-  CompanyProfile.findByIdAndUpdate(req.body.id, { $push: { applicants: req.body.applicant } })
-    .then((result) => {
-      console.log('Applicant added');
-      res.status(200).json(result);
-    });
+  console.log(req.body);
+  Company.findOneAndUpdate({ name: req.body.company }, { $push: { applicants: req.body.applicant } })
+    .then((result) => res.status(200).json(result));
+};
+
+companyController.getCompanies = (req, res) => {
+  Company.find({}).then(companies => res.status(200).json(companies));
 };
 
 module.exports = companyController;
