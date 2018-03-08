@@ -2,7 +2,8 @@
 ### macOS template
 # General
 *.DS_Store
-build
+build/bundle.js
+build/index.html
 .AppleDouble
 .LSOverride
 # Icon must end with two \r
