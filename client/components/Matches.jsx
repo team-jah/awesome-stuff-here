@@ -1,10 +1,5 @@
 import React, { Component } from 'react';
-<<<<<<< HEAD
-import { Button } from 'react-materialize';
-import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
-=======
 import { Link } from 'react-router-dom';
->>>>>>> db4be881e6e0fd55ad30a1acec48aa87a15b9af5
 
 class Matches extends Component {
 
@@ -63,7 +58,8 @@ class Matches extends Component {
           <div className='company' key={i}>
             <div className='company__header'>
               <h2>{company}</h2>
-              <Link className='company__button' to={`/quiz/${company}`}>Apply</Link>
+              {/* <Link className='company__button' to={`/quiz/${company}`}>Apply</Link> */}
+              <Link className='company__button' to="/quiz">Apply</Link>
             </div>
             <div className='company__values'>
               {this.renderValues(matchesForPage[company].culture)}

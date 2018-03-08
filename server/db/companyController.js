@@ -7,7 +7,7 @@ companyController.addCompany = (req, res) => {
     name: req.body.name,
     login: req.body.login,
   }).then((result) => {
-    console.log('Post created');
+    console.log('Company added');
     res.status(200).json(result);
   });
 };
