@@ -35,7 +35,7 @@ class Scores extends Component {
           <div>{applicant.name}</div>
           <div>{applicant.email}</div>
           <div><i onClick={this.handleBuffer.bind(this)} className="material-icons">videocam</i></div>
-          <div>{applicant.score}</div>
+          <div>{applicant.score + '%'}</div>
         </div>
       );
     });
