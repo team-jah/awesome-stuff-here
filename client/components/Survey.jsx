@@ -139,6 +139,13 @@ class Survey extends Component {
         <h1 className='survey__title'>
           Company Survey
         </h1>
+        <div className='survey__description'>
+          Select how import each of the following values are to you when looking for a company. 
+        </div>
+        {this.renderSliders.call(this)}
+        <div className='survey__description'>
+          Enter your information that can be provided to employers. 
+        </div>
         <div className='survey__field'>
           <div className='survey__label'>
             First Name:
@@ -151,10 +158,6 @@ class Survey extends Component {
           </div>
           <input onChange={this.handleEmail.bind(this)} value={this.state.email} type='text' className='survey__input'></input>
         </div>
-        <div className='survey__description'>
-          Please select how import each of the following values are to you when looking for a company. 
-        </div>
-        {this.renderSliders.call(this)}
         <button onClick={this.handleSubmit.bind(this)} className='survey__submit'>
           Submit
         </button>
