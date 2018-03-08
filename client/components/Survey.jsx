@@ -8,67 +8,67 @@ class Survey extends Component {
       name: '',
       email: '',
       sliderValues: {
-        team: {
+        Team: {
           value: 3,
           label: 'Team'
         },
-        perkAndBenefits: {
+        PerkAndBenefits: {
           value: 3,
           label: 'Perks And Benefits'
         },
-        meetings: {
+        Meetings: {
           value: 3,
           label: 'Meetings'
         },
-        ceoRating: {
+        CEORating: {
           value: 3,
           label: 'CEO Rating'
         },
-        executiveTeam: {
+        ExecutiveTeam: {
           value: 3,
           label: 'Executive Team'
         },
-        leadership: {
+        Leadership: {
           value: 3,
           label: 'Leadership'
         },
-        workCulture: {
+        WorkCulture: {
           value: 3,
           label: 'Work Culture'
         },
-        overallCulture: {
+        OverallCulture: {
           value: 3,
           label: 'Overall Culture'
         },
-        professionalDevelopment: {
+        ProfessionalDevelopment: {
           value: 3,
           label: 'Professional Development'
         },
-        compensation: {
+        Compensation: {
           value: 3,
           label: 'Compensation'
         },
-        environment: {
+        Environment: {
           value: 3,
           label: 'Environment'
         },
-        happiness: {
+        Happiness: {
           value: 3,
           label: 'Happiness'
         },
-        diversity: {
+        Diversity: {
           value: 3,
           label: 'Diversity'
         },
-        gender: {
+        Gender: {
           value: 3,
           label: 'Gender'
         },
-        retention: {
+        Retention: {
           value: 3,
           label: 'Retention'
         },
-        manager: {
+        Manager: {
           value: 3,
           label: 'Manager'
         },
@@ -76,16 +76,20 @@ class Survey extends Component {
           value: 3,
           label: 'eNPS'
         },
-        officeCulture: {
+        OfficeCulture: {
           value: 3,
           label: 'Office Culture'
         },
-        sentiment: {
+        Sentiment: {
           value: 3,
           label: 'Sentiment'
         }
       }
     };
+  }
+
+  componentDidMount() {
+    this.props.resetMatches();
   }
 
   handleName(event) {
@@ -107,10 +111,7 @@ class Survey extends Component {
   }
 
   handleSubmit() {
-    fetch('/survey', {
-      method: 'POST',
-      body: JSON.stringify(this.state)
-    });
+    this.props.addSurvey(this.state);
   }
 
   renderSliders() {
