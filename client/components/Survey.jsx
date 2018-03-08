@@ -88,6 +88,10 @@ class Survey extends Component {
     };
   }
 
+  componentDidMount() {
+    this.props.resetMatches();
+  }
+
   handleName(event) {
     this.setState({ name: event.target.value });
   }

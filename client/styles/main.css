@@ -1,3 +1,7 @@
+/*  */
+/* survey */
+/*  */
+
 .survey {
   width: 60vw;
   background-color: white;
@@ -103,6 +107,53 @@
 .survey__submit:hover {
   background-color: rgb(130, 212, 204);
   cursor: pointer;
+}
+
+/*  */
+/* company */
+/*  */
+
+.company {
+  width: 50%;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgb(230, 230, 230);
+  border-radius: 5px;
+  margin: 30px 0;
+}
+
+.company__header {
+  border-bottom: 1px solid rgb(230, 230, 230);
+  padding: 10px 20px;
+}
+
+.company__header h2 {
+  margin: 0;
+  padding: 0;
+}
+
+.company__values {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.company__value {
+  margin: 10px 20px;
+}
+
+/*  */
+/* etc */
+/*  */
+
+#content {
+  display: flex;
+  justify-content: center;
+}
+
+#matches {
+  padding: 20px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #footer {
