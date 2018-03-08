@@ -349,3 +349,14 @@ nav {
 .small-paragraph {
   margin-top: 15px;
 }
+
+#screen {
+  display: flex;
+  justify-content: center;
+}
+
+#candidate-screen {
+  width: 60%;
+  max-height: 300px;
+  /* border: 1px solid black; */
+}
