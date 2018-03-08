@@ -33,7 +33,7 @@ class App extends Component {
           <Navbar right brand="awesome team">
             <NavItem href="/companies">Companies</NavItem>
             <NavItem>Employers</NavItem>
-            <NavItem><Link to='/survey'>Candidates</Link></NavItem>
+            <Link className='link' to='/survey'>Candidates</Link>
           </Navbar>
 
           {this.state.matches && <Redirect to='/matches' />}
