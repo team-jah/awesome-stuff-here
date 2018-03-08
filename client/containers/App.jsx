@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import fetch from 'cross-fetch';
 import Survey from '../components/Survey';
 import Matches from '../components/Matches';
+import Quiz from '../components/Quiz';
 import Footer from '../components/Footer.jsx';
 import { Navbar, NavItem, Button } from 'react-materialize';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
@@ -50,7 +51,7 @@ class App extends Component {
               )}
               />
               <Route exact path="/quiz" render={(routeProps) => (
-                <Quiz {...routeProps} survey={this.state.survey} companies={this.state.companies} />
+                <Quiz {...routeProps} quizScore={this.state.quizScore} />
               )}
               />
               {/* <Route exact path="/user/" component={} />
