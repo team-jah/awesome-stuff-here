@@ -13,9 +13,9 @@ class App extends Component {
         <div className="app">
           <Navbar right brand="awesome team">
             <NavItem href="/companies">Companies</NavItem>
-            <Button waves='light'>Employers</Button>
-            <Button waves='light'>Candidates</Button>
-            <Link to='/survey'><Button waves='light'>Survey</Button></Link>
+            <NavItem>Employers</NavItem>
+            <NavItem>Candidates</NavItem>
+            {/* <Link to='/survey'><Button waves='light'>Survey</Button></Link> */}
           </Navbar>
 
           <Switch>

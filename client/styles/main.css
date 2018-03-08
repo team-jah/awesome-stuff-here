@@ -1,12 +1,7 @@
-<<<<<<< HEAD
-/* body {
-  display: flex;
-  justify-content: center;
-  background-color: #CCC;
-} */
+body {
+  font-family: 'Lato', sans-serif;
+}
 
-=======
->>>>>>> a35fe4f967da345d173a32806d847a654a0320cd
 .survey {
   width: 60vw;
   background-color: white;
@@ -133,32 +128,52 @@
 }
 
 #landing {
+  color: white;
+  padding-top: 45px;
+  background-color: #434649;
   margin: 0;
-  height: 800px;
+  height: 400px;
   display: flex;
   justify-content: center;
-  align-items: center;
+}
+
+.small-header {
+  font-size: 20px;
+}
+
+.text-description {
+  padding: 15px 0;
+}
+
+.light-text {
+  font-weight: 300;
+}
+
+button {
+  /* height: 40px; */
+  width: 250px;
+  margin: 15px 0 30px 0;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
 }
 
 nav {
-  background-color: #283e4a;
+  font-weight: 300;
+  background-color: #434649;
+  border: none;
 }
 
-.page-bg {
-  background-image: url("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-0.3.5&s=404e88a8cbfb7b2c4295fcbb13a44362&auto=format&fit=crop&w=2850&q=80");
-  -webkit-filter: blur(5px);
-  -moz-filter: blur(5px);
-  -o-filter: blur(5px);
-  -ms-filter: blur(5px);
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  filter: blur(5px);
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: -1;
+.margin-top-m {
+  margin-top: 15px;
 }
+
+#steps {
+  /* margin: 0; */
+  display: flex;
+  justify-content: center;
+}
+
+/* #0073b1 */
