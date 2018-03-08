@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Button } from 'react-materialize';
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 
 class Matches extends Component {
 
@@ -36,6 +38,7 @@ class Matches extends Component {
           <div className='company' key={i}>
             <div className='company__header'>
               <h2>{company}</h2>
+              <Button waves='light'><Link to='/quiz'>Apply</Link></Button>
             </div>
             <div className='company__values'>
               {renderValues(matches[company].culture)}

@@ -15,7 +15,8 @@ class App extends Component {
     this.state = {
       survey: null,
       companies: null,
-      matches: false
+      matches: false,
+      quizScore: 0
     }
   }
 
@@ -27,7 +28,7 @@ class App extends Component {
 
   render() {
     return (
-      <BrowserRouter>      
+      <BrowserRouter>
         <div className="app">
           <Navbar right brand="awesome team">
             <NavItem href="/companies">Companies</NavItem>
@@ -46,6 +47,10 @@ class App extends Component {
               />
               <Route exact path="/matches" render={(routeProps) => (
                 <Matches {...routeProps} survey={this.state.survey} companies={this.state.companies} />
+              )}
+              />
+              <Route exact path="/quiz" render={(routeProps) => (
+                <Quiz {...routeProps} survey={this.state.survey} companies={this.state.companies} />
               )}
               />
               {/* <Route exact path="/user/" component={} />
