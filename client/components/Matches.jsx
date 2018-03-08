@@ -58,7 +58,8 @@ class Matches extends Component {
           <div className='company' key={i}>
             <div className='company__header'>
               <h2>{company}</h2>
-              <Link className='company__button' to={`/quiz/${company}`}>Apply</Link>
+              {/* <Link className='company__button' to={`/quiz/${company}`}>Apply</Link> */}
+              <Link className='company__button' to="/quiz">Apply</Link>
             </div>
             <div className='company__values'>
               {this.renderValues(matchesForPage[company].culture)}

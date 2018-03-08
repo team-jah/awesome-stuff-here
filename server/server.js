@@ -9,10 +9,10 @@ const mongoose = require('mongoose');
 const companyAPI = require('./db/companyAPI');
 const companyController = require('./db/companyController');
 
-mongoose.connect('mongodb://jah:coolstuff@ds259778.mlab.com:59778/awesomestuff');
-mongoose.connection.once('open', () => {
-  console.log('\nConnected with Awesome Database');
-});
+// mongoose.connect('mongodb://jah:coolstuff@ds259778.mlab.com:59778/awesomestuff');
+// mongoose.connection.once('open', () => {
+//   console.log('\nConnected with Awesome Database');
+// });
 
 app.use(express.static(`${__dirname}/../build`));
 app.use(bodyParser.urlencoded({ extended: true }));

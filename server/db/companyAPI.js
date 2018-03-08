@@ -10,7 +10,6 @@ companyAPI.apiQuery = (req, res) => {
   request(options, (error, response, body) => {
     if (error) res.send(error);
     body = JSON.parse(body);
-    console.log(Object.keys(body).length);
     res.send(body);
   });
 };

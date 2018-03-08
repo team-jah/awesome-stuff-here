@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import fetch from 'cross-fetch';
-import Survey from '../components/Survey';
-import Matches from '../components/Matches';
+import Survey from '../components/Survey.jsx';
+import Matches from '../components/Matches.jsx';
+import Quiz from '../components/Quiz.jsx';
 import Footer from '../components/Footer.jsx';
 import { Navbar, NavItem, Button } from 'react-materialize';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
@@ -17,7 +18,8 @@ class App extends Component {
     this.state = {
       survey: null,
       companies: null,
-      matches: false
+      matches: false,
+      quizScore: 0
     }
   }
 
@@ -29,11 +31,12 @@ class App extends Component {
 
   render() {
     return (
-      <BrowserRouter>      
+      <BrowserRouter>
         <div className="app">
           <Navbar right brand="awesome team">
             {/* <NavItem href="/companies">Companies</NavItem> */}
             {/* <NavItem>Employers</NavItem> */}
+            <Link className='link' to='/quiz'>QUIZ</Link>
             <Link className='link' to='/matches'>Companies</Link>
             <Link className='link' to='/survey'>Employers</Link>
             <Link className='link' to='/interview'>Sign in</Link>
@@ -50,6 +53,10 @@ class App extends Component {
               />
               <Route exact path="/matches" render={(routeProps) => (
                 <Matches {...routeProps} survey={this.state.survey} companies={this.state.companies} />
+              )}
+              />
+              <Route exact path="/quiz" render={(routeProps) => (
+                <Quiz {...routeProps} quizScore={this.state.quizScore} />
               )}
               />
               {/* <Route exact path="/user/" component={} />
