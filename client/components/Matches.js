@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 
 class Matches extends Component {
 
+  componentWillMount() {
+    window.scrollTo(0, 0);
+  }
+
   renderMatches() {
     const charMap = { A: 5, B: 4, C: 3, D: 2, F: 1 }, matches = {};
     Object.keys(this.props.companies).forEach(key => {
@@ -14,18 +18,36 @@ class Matches extends Component {
       });
       if (match) matches[key] = this.props.companies[key];
     });
-    return Object.keys(matches).map((company, i) => {
-      return (
-        <div key={i}>
-          {company}
-        </div>
-      );
-    });
+
+    function renderValues(values) {
+      return Object.keys(values).map((key, i) => {
+        return (
+          <div key={i} className='company__value'>
+            {key}: <strong>{values[key].grade}</strong>
+          </div>
+        );
+      });
+    }
+
+    return Object.keys(matches)
+      .filter(company => Object.keys(matches[company].culture).length > 0)
+      .map((company, i) => {
+        return (
+          <div className='company' key={i}>
+            <div className='company__header'>
+              <h2>{company}</h2>
+            </div>
+            <div className='company__values'>
+              {renderValues(matches[company].culture)}
+            </div>
+          </div>
+        );
+      });
   }
 
   render() {
     return (
-      <div>
+      <div id='matches'>
         {this.renderMatches.call(this)}
       </div>
     );

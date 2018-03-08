@@ -32,27 +32,28 @@ class App extends Component {
           <Navbar right brand="awesome team">
             <NavItem href="/companies">Companies</NavItem>
             <Button waves='light'>Employers</Button>
-            <Button waves='light'>Candidates</Button>
-            <Link to='/survey'><Button waves='light'>Survey</Button></Link>
+            <Button waves='light'><Link to='/survey'>Candidates</Link></Button>
           </Navbar>
 
           {this.state.matches && <Redirect to='/matches' />}
 
-          <Switch>
-            <Route exact path="/" component={Landing} />
-            <Route exact path="/survey" render={(routeProps) => (
-                <Survey {...routeProps} addSurvey={this.addSurvey.bind(this)} />
+          <div id='content'>
+            <Switch>
+              <Route exact path="/" component={Landing} />
+              <Route exact path="/survey" render={(routeProps) => (
+                <Survey {...routeProps} addSurvey={this.addSurvey.bind(this)} resetMatches={() => this.setState({ matches: false })} />
               )}
-            />
-            <Route exact path="/matches" render={(routeProps) => (
+              />
+              <Route exact path="/matches" render={(routeProps) => (
                 <Matches {...routeProps} survey={this.state.survey} companies={this.state.companies} />
               )}
-            />
-            {/* <Route exact path="/user/" component={} />
+              />
+              {/* <Route exact path="/user/" component={} />
             <Route exact path="/matched/" component={} />
             <Route exact path="/companies/" component={} />
             <Route exact path="/interview/" component={} /> */}
-          </Switch>
+            </Switch>
+          </div>
 
           <Footer />
         </div>
