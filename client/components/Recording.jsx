@@ -11,21 +11,14 @@ class Recording extends Component {
       finished: false,
       recording: false,
     }
-
-
   }
 
   startRecording() {
-    if (this.state.finished) {
-      
-    }
-
     if (this.state.recording) {
       this.setState({finished: true});
       mediaRecorder.stop();
       return;
     }
-
     this.setState({ recording: true});
     let options = {mimeType: 'video/webm;codecs=vp9'};
     mediaRecorder = new MediaRecorder(window.stream, options);    
@@ -69,7 +62,7 @@ class Recording extends Component {
       <div id="screen" className="row">
         <div className="col-md-10">
           <div className="text-description">
-            <h4 className="light-text" align="center">A new way to match and interview for the companies you want</h4>
+            <h4 className="light-text" align="center">Tell me about your experience with Node.js</h4>
           </div>
           <div className="center">
             <video id="candidate-screen" autoPlay muted></video>
