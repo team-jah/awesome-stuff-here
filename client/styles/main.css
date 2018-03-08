@@ -274,7 +274,8 @@ a:visited {
 #landing {
   color: white;
   padding-top: 45px;
-  background-color: #434649;
+  /* background-color: #434649; */
+  background-image: url('http://thepalacelibrary.com/wp-content/uploads/2015/10/dark-grey-background-1600-1050-gradient.jpg');
   margin: 0;
   height: 400px;
   display: flex;
@@ -308,7 +309,7 @@ button {
 
 nav {
   font-weight: 300;
-  background-color: #434649;
+  background-color: #404040;
   border: none;
 }
 
