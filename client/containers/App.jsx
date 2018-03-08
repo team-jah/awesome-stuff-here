@@ -32,9 +32,11 @@ class App extends Component {
       <BrowserRouter>
         <div className="app">
           <Navbar right brand="awesome team">
-            <NavItem href="/companies">Companies</NavItem>
-            <NavItem>Employers</NavItem>
-            <Link className='link' to='/survey'>Candidates</Link>
+            {/* <NavItem href="/companies">Companies</NavItem> */}
+            {/* <NavItem>Employers</NavItem> */}
+            <Link className='link' to='/matches'>Companies</Link>
+            <Link className='link' to='/survey'>Employers</Link>
+            <Link className='link' to='/survey'>Sign in</Link>
           </Navbar>
 
           {this.state.matches && <Redirect to='/matches' />}
